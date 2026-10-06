@@ -1,0 +1,290 @@
+/* 1. Halaman, judul, dan posisi */
+.page {
+  min-height: 100vh;
+  padding: 48px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top, #fffaf3, #f0dfcf);
+}
+
+.heading {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.eyebrow {
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.heading h1,
+.cassette-label h2,
+.login-form h2 {
+  font-family: Georgia, serif;
+  font-weight: normal;
+}
+
+.heading h1 {
+  margin: 12px 0;
+  font-size: clamp(32px, 6vw, 48px);
+}
+
+.heading > p:last-child {
+  font-size: 14px;
+  color: #8b7060;
+}
+
+.login-layout {
+  width: 100%;
+  max-width: 960px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+.player,
+.login-form {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  max-width: 460px;
+}
+
+/* 2. Badan pemutar dan kaset */
+.player {
+  padding: 26px;
+  border: 2px solid #b78c70;
+  border-radius: 24px;
+  background: #e7baa0;
+  box-shadow:
+    0 8px 0 #bd8e73,
+    0 22px 45px #593e3226,
+    inset 0 2px 0 #ffffff80;
+  animation: floatCassette 6s ease-in-out infinite;
+}
+
+.player-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 22px;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.cassette {
+  padding: 18px;
+  border: 3px solid #49372f;
+  border-radius: 14px;
+  background: #654d40;
+  box-shadow: inset 0 2px 8px #00000030;
+}
+
+.cassette-label {
+  padding: 12px 8px;
+  border-radius: 6px 6px 0 0;
+  background: #fff1d9;
+  text-align: center;
+}
+
+.cassette-label span {
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.cassette-label h2 {
+  margin: 10px 0;
+  font-size: 25px;
+  font-style: italic;
+}
+
+.tape-window {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+  padding: 16px 10px;
+  border: 2px solid #332820;
+  border-radius: 40px;
+  background: #2f2925;
+}
+
+.reel {
+  flex-shrink: 0;
+  width: 62px;
+  height: 62px;
+  display: grid;
+  place-items: center;
+  border: 6px dashed #b79b7f;
+  border-radius: 50%;
+  background: #edddbd;
+  animation: spin 3s linear infinite;
+  animation-play-state: paused;
+}
+
+.reel-center {
+  width: 18px;
+  height: 18px;
+  border: 4px solid #80634d;
+  border-radius: 50%;
+  background: #2f2925;
+}
+
+.tape-line {
+  width: 65px;
+  height: 5px;
+  background: #a98566;
+}
+
+.cassette-bottom {
+  width: 55%;
+  height: 22px;
+  margin: 16px auto 0;
+  border: 2px solid #49372f;
+  border-radius: 12px 12px 0 0;
+  background: #80634d;
+}
+
+/* 3. Tombol Play dan Stop */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 25px;
+}
+
+.controls button {
+  padding: 13px 22px;
+  border: 1px solid #aa8065;
+  border-radius: 8px;
+  color: #593e32;
+  background: #fff1dd;
+  box-shadow: 0 4px 0 #aa8065;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.controls button:active {
+  transform: translateY(4px);
+  box-shadow: none;
+}
+
+.player-note {
+  margin: 22px 0 0;
+  text-align: center;
+  font-family: Georgia, serif;
+  font-size: 13px;
+  font-style: italic;
+}
+
+/* 4. Form login */
+.login-form {
+  padding: 28px;
+  border: 1px solid #d9bea5;
+  border-radius: 20px;
+  background: #fffaf2;
+  box-shadow: 0 12px 30px #593e3212;
+  animation: formAppear 0.5s ease;
+}
+
+.login-form h2 {
+  margin: 12px 0;
+  font-size: 30px;
+}
+
+.login-form > p:not(.eyebrow) {
+  margin-bottom: 24px;
+  font-size: 13px;
+  color: #8b7060;
+}
+
+.login-form label {
+  display: block;
+  margin: 16px 0 8px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.login-form input,
+.login-form button {
+  width: 100%;
+  border-radius: 9px;
+}
+
+.login-form input {
+  padding: 13px 14px;
+  border: 1px solid #d9bea5;
+  color: #593e32;
+  background: #fff;
+}
+
+.login-form button {
+  margin-top: 24px;
+  padding: 14px;
+  border: none;
+  color: #fffaf2;
+  background: #654d40;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.login-form button:hover {
+  background: #49372f;
+}
+
+.login-form input:focus,
+.login-form button:focus-visible,
+.controls button:focus-visible {
+  outline: 2px solid #b78c70;
+  outline-offset: 3px;
+}
+
+/* 5. Animasi dan layar kecil */
+.playing .reel {
+  animation-play-state: running;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes floatCassette {
+  0%, 100% {
+    transform: translateY(0) rotate(-1deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+}
+
+@keyframes formAppear {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 800px) {
+  .login-layout {
+    flex-direction: column;
+  }
+
+  .player,
+  .login-form {
+    flex: none;
+  }
+}
